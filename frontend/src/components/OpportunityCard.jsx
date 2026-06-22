@@ -32,12 +32,23 @@ const formatDate = (date) => {
 };
 
 const OpportunityCard = ({ opportunity, currentUserId, onEdit, onDelete, deleting }) => {
-  const isOwner = opportunity.owner?._id === currentUserId;
+  const isOwner = String(opportunity.owner?._id) === String(currentUserId);
 
   return (
-    <div className="rounded-xl bg-white p-5 shadow-md transition hover:shadow-lg">
+    <div
+      className={`rounded-xl bg-white p-5 shadow-md transition hover:shadow-lg ${
+        isOwner ? 'ring-2 ring-blue-200' : ''
+      }`}
+    >
       <div className="mb-3 flex items-start justify-between gap-2">
-        <h3 className="text-lg font-semibold text-gray-900">{opportunity.customerName}</h3>
+        <div className="flex items-center gap-2">
+          <h3 className="text-lg font-semibold text-gray-900">{opportunity.customerName}</h3>
+          {isOwner && (
+            <span className="rounded-full bg-blue-600 px-2 py-0.5 text-xs font-medium text-white">
+              Yours
+            </span>
+          )}
+        </div>
         <div className="flex flex-shrink-0 gap-2">
           <span
             className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${stageColors[opportunity.stage]}`}

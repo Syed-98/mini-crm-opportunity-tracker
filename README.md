@@ -2,6 +2,27 @@
 
 A full-stack Mini CRM for tracking sales opportunities. Built with the MERN stack (MongoDB, Express, React, Node.js), it supports user authentication, opportunity CRUD, ownership-based access control, and a responsive dashboard with pipeline summaries.
 
+## Live Demo
+
+| Resource | URL |
+|----------|-----|
+| **Frontend (Vercel)** | https://mini-crm-opportunity-tracker-three.vercel.app |
+| **Backend API (Render)** | https://mini-crm-opportunity-tracker-bzkf.onrender.com |
+| **GitHub Repository** | https://github.com/Syed-98/mini-crm-opportunity-tracker |
+
+### Test Access
+
+Registration is open — create an account on the live app to test all features.
+
+Alternatively, use these demo credentials (create this account locally or on production before submitting):
+
+| Field | Value |
+|-------|-------|
+| Email | `demo@crmtracker.com` |
+| Password | `demo1234` |
+
+> **Production checklist:** On Render, set `CORS_ORIGIN=https://mini-crm-opportunity-tracker-three.vercel.app` and a strong `JWT_SECRET`. On Vercel, set `VITE_API_URL=https://mini-crm-opportunity-tracker-bzkf.onrender.com`.
+
 ## Tech Stack
 
 | Layer    | Technologies                                      |
@@ -119,14 +140,18 @@ README.md         → This file
 1. Push the repo to GitHub.
 2. Create a new **Web Service** on [render.com](https://render.com).
 3. Set root directory to `backend`, build command `npm install`, start command `npm start`.
-4. Add environment variables: `MONGO_URI`, `JWT_SECRET`, `NODE_ENV=production`, `PORT=5000`, `CORS_ORIGIN=https://your-app.vercel.app`.
+4. Add environment variables:
+   - `MONGO_URI` — MongoDB Atlas connection string
+   - `JWT_SECRET` — strong random secret (not the placeholder)
+   - `NODE_ENV=production`
+   - `CORS_ORIGIN=https://mini-crm-opportunity-tracker-three.vercel.app`
 5. Note the deployed URL (e.g. `https://your-api.onrender.com`).
 
 ### Vercel (Frontend)
 
 1. Import the repo on [vercel.com](https://vercel.com).
 2. Set root directory to `frontend`.
-3. Add environment variable: `VITE_API_URL=https://your-api.onrender.com`.
+3. Add environment variable: `VITE_API_URL=https://mini-crm-opportunity-tracker-bzkf.onrender.com`.
 4. Deploy. Vercel auto-detects Vite.
 
 ---
