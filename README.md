@@ -14,7 +14,7 @@ A full-stack Mini CRM for tracking sales opportunities. Built with the MERN stac
 
 Registration is open — create an account on the live app to test all features.
 
-Alternatively, use these demo credentials (create this account locally or on production before submitting):
+Alternatively, use these demo credentials :
 
 | Field | Value |
 |-------|-------|
